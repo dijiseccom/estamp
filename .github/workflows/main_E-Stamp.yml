@@ -37,7 +37,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     environment:
-      name: 'production'
+      name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
     steps:
@@ -51,6 +51,6 @@ jobs:
         id: deploy-to-webapp
         with:
           app-name: 'E-Stamp'
-          slot-name: 'production'
-          publish-profile: ${{ secrets.AzureAppService_PublishProfile_e01f1386f599470ab2dc600d7276c130 }}
+          slot-name: 'Production'
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_D1F9797FF02C4D62A19E2B153F12D253 }}
           package: .
